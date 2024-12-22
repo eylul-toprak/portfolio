@@ -47,45 +47,94 @@
             bottom: 0;
             width: 100%;
         }
+
+        .section-header {
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #284b63;
+            padding: 10px;
+            background-color: #eef1f5;
+            border: 1px solid #c0c0c0;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        .section-header:hover {
+            background-color: #d1d1d1;
+        }
+
+        .section-content {
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".section-header").click(function () {
+                var target = $(this).next(".section-content");
+                target.slideToggle();
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
-        <img src="image/profil.jpg" alt="Eylül Toprak" 
-        style="max-width: 150px; border-radius: 50%;">
+        <img src="image/profil.jpg" alt="Eylül Toprak" style="max-width: 150px; border-radius: 50%;">
         <h1>Eylül Toprak</h1>
         <nav>
             <a href="#hakkimda">Hakkımda</a>
             <a href="#projeler">Projeler</a>
+            <a href="#yetenekler">Yetenekler</a>
             <a href="#iletisim">İletişim</a>
-        </nav>
+        </nav>       
+        <h4></h4>
     </header>
 
     <main>
         <section id="hakkimda">
-            <h2>Hakkımda</h2>
-            <p>Merhaba ben Eylül Toprak, Bilgisayar Mühendisliği öğrencisiyim. 
-            Teknolojiye olan ilgim beni yazılım dünyasında yeni şeyleri keşfetmeye yöneltti.
-            Bu alanda öğrendiklerimi projelerimle birleştirerek, kod satırları arasında yeni dünyalar yaratıyorum :).
-            Burada da projelerimi paylaşarak deneyimlerimi aktarmak istiyorum.</p>
+            <div class="section-header">Hakkımda</div>
+            <div class="section-content">
+                <p>Merhaba ben Eylül Toprak, Bilgisayar Mühendisliği öğrencisiyim. Teknolojiye olan ilgim beni yazılım dünyasında yeni şeyleri keşfetmeye yöneltti. Bu alanda öğrendiklerimi projelerimle birleştirerek, kod satırları arasında yeni dünyalar yaratıyorum :). Burada da projelerimi paylaşarak deneyimlerimi aktarmak istiyorum.</p>
+            </div>
         </section>
 
         <section id="projeler">
-            <h2>Projeler</h2>
-            <ul>
-                <li>Proje 1: C dili ile mayın tarlası oyunu</li>
-                <li>Proje 2: C++ ile bilgi yarışması oyunu</li>
-                <li>Proje 3: c++ ile emlak otomasyonu</li> 
-            </ul>
+            <div class="section-header">Projeler</div>
+            <div class="section-content">
+                <ul>
+                    <li>Proje 1: C dili ile mayın tarlası oyunu</li>
+                    <li>Proje 2: C++ ile bilgi yarışması oyunu</li>
+                    <li>Proje 3: C++ ile emlak otomasyonu</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="yetenekler">
+            <div class="section-header">Yetenekler</div>
+            <div class="section-content">
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>C/C#</li>
+                    <li>C++</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
         </section>
 
         <section id="iletisim">
-            <h2>İletişim</h2>
-            <p>Bana ulaşmak için: <a href="mailto:eylulltoprak07@gmail.com">eylulltoprak07@gmail.com</a></p>
+            <div class="section-header">İletişim</div>
+            <div class="section-content">
+                <p>Bana ulaşmak için: <a href="mailto:eylulltoprak07@gmail.com">eylulltoprak07@gmail.com</a></p>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2024 Eylül Toprak. Tüm Hakları Saklıdır.</p>
     </footer>
+</body>
 </html>
